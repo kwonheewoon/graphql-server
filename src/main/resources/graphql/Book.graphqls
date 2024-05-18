@@ -1,0 +1,27 @@
+type Book {
+    id: Int!
+    title: String!
+    author: String!
+    yearPublished: Int!
+}
+
+# 쿼리 타입 정의
+type Query {
+    # ID를 기반으로 단일 책 정보를 조회
+    getBookById(id: Int!): Book
+
+    # 모든 책 리스트를 조회
+    getAllBooks: [Book]
+}
+
+# 뮤테이션 타입 정의
+type Mutation {
+    # 새로운 책을 추가
+    addBook(id: Int!, title: String!, author: String!, yearPublished: Int!): Book
+
+    # 기존 책 정보 업데이트
+    updateBook(id: Int!, title: String, author: String, yearPublished: Int): Book
+
+    # 책 삭제
+    deleteBook(id: Int!): Book
+}

@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: graphql-server
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:graphqlDB;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
